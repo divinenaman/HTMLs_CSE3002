@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Forms</title>
+	<style>
+		label{
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body style="background-color:#273746;font-family:'Courier New'">
+
+	<h2 align=center>STUDENT REGISTRATION</h2>
+
+	<div align=center style="margin-left: 250px;margin-right: 250px">
+		<form action="#" method="POST">
+			<fieldset style="padding: 100px">
+				<label for="first_name">FIRST NAME:</label><br>
+				<input type=text placeholder="First Name" name="first_name" id="first_name"/><br><br>
+				<br>
+				<label for="last_name">LAST NAME:</label><br>
+				<input type=text placeholder="Last Name" name="last_name" id="last_name"/><br><br>
+				<br>
+				<label for="email">EMAIL:</label><br>
+				<input type=text placeholder="Email" name="email" id="email"/><br><br>
+				<br>
+				<label for="regno">REGISTRATION NO:</label><br>
+				<input type=text placeholder="Registration no" name="regno" id="regno"/><br><br>
+				<br>
+				<label for="dob">DATE OF BIRTH:</label><br>
+				<select name="date" id="date" value="DATE">
+					<option value="placeholder" disabled selected style="display: none">Date</option> 
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">4</option>
+				</select>
+				<select name="month" id="month">
+					<option value="placeholder" disabled selected style="display: none">Month</option>
+					<option value="jan">JAN</option>
+					<option value="feb">FEB</option>
+					<option value="march">MARCH</option>
+					<option value="april">APRIL</option>
+					<option value="may">MAY</option>
+				</select>
+				<select name="year" id="year">
+					<option value="placeholder" disabled selected style="display: none">Year</option>
+					<option value="2001">2001</option>
+					<option value="2002">2002</option>
+					<option value="2003">2003</option>
+					<option value="2004">2004</option>
+					<option value="2005">2005</option>
+				</select><br><br>
+				<br>
+				<label for="mobile">MOBILE NO:</label><br>
+				<input type="text" name="mobile" placeholder="Mobile No." id="mobile"><br><br>
+				<br>
+				<label for="male">GENDER:</label>
+				<input type="radio" name="male" id="male"/>
+				<label for="male">Male</label>
+				<input type="radio" name="male" id="male"/>
+				<label for="male">Male</label><br><br>
+				<br>
+				<label for="address">ADDRESS:</label><br>
+				<textarea name="address" id="address"></textarea><br><br>
+				<br>
+				<label for="city">CITY:</label><br>
+				<input type=text placeholder="City" name="city" id="city"/><br><br>
+				<br>
+				<label for="state">STATE:</label><br>
+				<input type=text placeholder="State" name="state" id="state"/><br><br>
+				<br>
+				<label for="country">COUNTRY:</label><br>
+				<input type=text placeholder="Country" name="country" id="country"/><br><br>
+				<br>
+				<label for="pincode">PINCODE:</label><br>
+				<input type=text placeholder="Pincode" name="pincode" id="pincode"/><br><br>
+				<br>
+				<label for="hobby">HOBBIES:</label>
+				<input type="checkbox" name="Reading" id="reading"/>
+				<label for="reading">Reading</label>
+				<input type="checkbox" name="Writing" id="Writing"/>
+				<label for="Writing">Writing</label>
+				<input type="checkbox" name="Playing" id="Playing"/>
+				<label for="Playing">Playing</label>
+				<input type="checkbox" name="Others" id="Others"/>
+				<label for="Others">Others:</label>
+				<input type="text" name="others" placeholder="Hobby" id="others"><br><br>
+				<br>
+				<label for="qualifications">QUALIFICATIONS:</label><br><br>
+					
+						<label for="highschool">10th BOARDS:</label><br>
+						<input type="text" name="school" id="school" placeholder="School Name" />
+						<input type="text" name="highschool" id="highschool" placeholder="Cgpa or Percent" /><br><br>
+
+						<label for="12boards">12th BOARDS:</label><br>
+						<input type="text" name="school" id="school" placeholder="School Name" />
+						<input type="text" name="12boards" id="12boards" placeholder="Cgpa or Percent" /><br><br>
+					
+				<br>	
+				<label for="llb btech mtech">COURSE:</label>
+				<input type="radio" name="llb" id="llb"/>
+				<label for="llb">LAW</label>
+				<input type="radio" name="btech" id="btech"/>
+				<label for="btech">B.TECH</label>
+				<input type="radio" name="btech" id="mtech"/>
+				<label for="mtech">M.TECH</label><br><br>
+				<br>
+				<label for="myfile">UPLOAD PHOTO AND ID:</label><br><br>
+				<input type="file" id="myfile" name="myfile"><br><br><br>
+
+				<input type="submit" name="formsubmit" id="formsubmit">
+				<input type="reset" name="formreset" id="fromreset">
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>
