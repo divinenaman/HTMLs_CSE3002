@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Google</title>
+	<style>
+
+		body{
+			font-family: Helvetica, sans-serif;
+		}
+
+		.topnav{
+			min-height: 30px;
+			background-color: #282727;
+			color:#fff;
+			font-size: 18px;
+		}
+
+		.topnav a{
+			float:left;
+			margin:5px 10px;
+			text-decoration: none;
+			color:#fff;
+
+		}
+
+		.topnav a:hover{
+			color:red;
+		}
+
+		.btn{
+			outline:none;
+			border:none;
+			background-color: inherit;
+			color:#fff;
+			font-family: inherit;
+			font-size: inherit;
+			padding:5px 5px;
+
+		}
+
+		.dropdown{
+			position: relative;
+			display: inline-block;
+			background-color: inherit;
+		}
+
+		.dropmenu{
+			position: absolute;
+			display: none;
+			background-color: #fff;
+			box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 18px 0 rgba(0, 0, 0, 0.19);
+			padding:15px 15px 15px 0px;
+		}
+
+		.dropmenu a{
+			float: none;
+			display: block;
+			color:#000;
+			
+		}
+
+		.dropdown:hover{
+			background-color: rgba(255,255,255,0.19);
+		}
+		.dropdown:hover .dropmenu{
+			display: block;
+
+		}
+
+		.logo{
+			font-family: 'Product Sans';
+			padding: 40px;
+			margin-top: 100px;
+			
+		}
+		.logo span{
+			letter-spacing: 10px;
+			font-size: 120px;
+		}
+
+		#search{
+			width: 500px;
+			border:solid #000 2px;
+			border-radius: 50px;
+			outline: none;
+			height: 30px;	
+			padding: 5px;
+			font-size:15px;
+		}
+
+		.footer{
+			position: absolute;
+			bottom: 0;
+			left:0;
+			right:0;			
+			padding:10px;
+		}
+
+		.footer hr{
+			border:solid #000 1px;
+		}
+
+		.footer a{
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body style="margin:0;padding:0">
+
+<div class="topnav">
+  <a href="#">Search</a>
+  <a href="https://www.google.co.in/imghp?hl=en-GB&tab=ri&ogbl">Images</a>
+  <a href="https://www.google.co.in/maps">Maps</a>
+  <a href="#">Play</a>
+  <a href="https://www.youtube.com/">Youtube</a>
+  <a href="#">News</a>
+  <a href="www.gmail.com">Gmail</a>
+  <a href="#">Drive</a>
+  <div class="dropdown">
+  	<button class="btn">More</button>
+  		<div class="dropmenu">
+  			<a href="#" value="">Calender</a>
+  			<a href="#" value="">Books</a>
+  			<a href="#" value="">Photos</a>
+  		</div>
+  </div>
+</div>
+<div align=center class="logo">
+	<span style="color:blue;">G</span>
+	<span style="color:red;">o</span>
+	<span style="color:yellow;">o</span>
+	<span style="color:blue;">g</span>
+	<span style="color:green;">l</span>
+	<span style="color:red;">e</span> 
+	<br><br><br>
+	<input id="search" type="text" placeholder="Search.." /><br><br>
+	<button>Google search</button>
+	<button>I'm feeling lucky</button>
+</div>
+
+<div class="footer">
+	<hr noshade>
+	<a href="">Advanced Search</a>
+	<a href="">Language Tools</a>
+</div>
+</body>
+</html>

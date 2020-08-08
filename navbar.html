@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NavBAR</title>
+	<style>
+
+		body{
+			font-family: Helvetica, sans-serif;
+			background-color: #FFC300;
+		}
+
+		.topnav{
+			min-height: 30px;
+			background-color: #282727;
+			color:#fff;
+			font-size: 25px;
+		}
+
+		.topnav a{
+			float:left;
+			padding:10px 10px;
+			text-decoration: none;
+			color:#fff;
+
+		}
+
+		.topnav a:hover{
+			color:#0634A5;
+		}
+
+		.btn{
+			outline:none;
+			border:none;
+			background-color: inherit;
+			color:#fff;
+			font-family: inherit;
+			font-size: inherit;
+			padding:10px 5px;
+
+		}
+
+		.dropdown{
+			position: relative;
+			display: inline-block;
+			background-color: inherit;
+		}
+
+		.dropmenu{
+			position: absolute;
+			display: none;
+			background-color: rgba(0,0,0,0.5);
+			box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.19), 0 4px 18px 0 rgba(0, 0, 0, 0.19);
+			padding:15px 15px 15px 0px;
+		}
+
+		.dropmenu a{
+			float: none;
+			display: block;
+			color:#000;
+			
+		}
+
+		.dropdown:hover{
+			background-color: rgba(255,255,255,0.19);
+		}
+		.dropdown:hover .dropmenu{
+			display: block;
+
+		}
+
+</style>
+</head>
+<body style="margin:0;padding:0">
+
+<div class="topnav">
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <div class="dropdown">
+  	<button class="btn">Portfolio</button>
+  		<div class="dropmenu">
+  			<a href="#" value="">Web Design</a>
+  			<a href="#" value="">Web Development</a>
+  			<a href="#" value="">Illustrations</a>
+  		</div>
+  </div>
+  <a href="#">Blogs</a>
+  <a href="#">Contact</a>
+</div>
