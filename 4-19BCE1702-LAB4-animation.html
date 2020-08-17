@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation</title>
+	<style>
+		.animate{
+			position: relative;
+			animation-name: imgmove;
+			animation-duration: 3s;
+			animation-direction: alternate;
+			animation-timing-function: linear;
+			animation-delay: 2s;
+			animation-iteration-count: infinite;
+		}
+
+		@keyframes imgmove{
+			0%{
+				left:0;
+			}
+			100%{
+				left:60%;
+		}
+	}
+
+		.text{
+			column-count: 3;
+			column-gap: 2em;
+			column-rule-style: solid;
+			column-rule-width: 2px;
+			column-rule-color: blue;
+		}
+
+		.text h3{
+			column-span: all;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<h3>Animation</h3>
+	<div class="animate">
+		<img src="https://images.unsplash.com/photo-1503249023995-51b0f3778ccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=311&q=80" alt="no-image" width=300 height=400>
+	</div>
+</div>
+
+<div class="text">
+	<h3>Multi Columns</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec varius magna. Nam id eros neque. Fusce fermentum velit nec felis iaculis, et elementum turpis porta. Ut non nibh quis diam pellentesque suscipit sit amet ac massa. Suspendisse interdum sodales velit in accumsan. Donec lacinia elit ac neque cursus, ut vulputate massa pharetra. Nulla facilisi. Duis tempor ornare est nec malesuada. Etiam tristique malesuada fermentum. Nunc a dui a risus accumsan pretium in vitae purus. Donec quis volutpat ex, vitae tincidunt odio. Etiam eu neque magna. Ut vel mauris neque. Morbi consequat, ipsum placerat fringilla porta, tellus neque aliquet turpis, non sagittis elit ipsum non est. Pellentesque volutpat dignissim odio, nec venenatis lorem sagittis ac. Aenean imperdiet dolor vitae lorem varius eleifend. Nam tellus erat, imperdiet a commodo non, imperdiet vel mi. Suspendisse eget ipsum sed ex finibus tempor eget non tortor. Curabitur aliquam lacus vel quam accumsan accumsan. Quisque sapien est, porttitor sed facilisis vel, ultricies eget augue. Integer facilisis est metus, et placerat arcu tristique non. Vestibulum sit amet quam varius, finibus dolor id, dictum velit. Sed nibh mi, aliquet a urna vitae, imperdiet varius lectus.
+</p>
+<img src="https://images.unsplash.com/photo-1569993216598-c03e984c933b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" width=200 height=200>
+</div>
+</body>
+</html>
