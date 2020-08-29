@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Temperature Converter</title>
+	<style type="text/css">
+		body{
+			font-family: Helvetica;
+			font-weight: bold;
+		}
+		#cont{
+			margin-top: 30vh;
+			background-color: orange;
+			padding: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div id="cont" align=center>
+		<h2>Temperature Converter</h2>
+		<input type="text" placeholder="Enter temp" id="temp"/>
+		<select id="unit">
+			<option value="c">Celsius</option>
+			<option value="f">Fahrenheit</option>
+		</select>
+		<br><br>
+		<button onclick="celsius()">Convert to Celcius</button>
+
+		<button onclick="fahren()">Convert to Fahrenheit</button>
+		<br>
+
+		<p id="display"></p>
+	</div>
+
+	<script type="text/javascript">
+		function celsius(){
+			const val = document.getElementById("temp").value
+			const unit = document.getElementById("unit").value
+			let newtemp=0
+			if(unit==='c'){
+				 newtemp=val
+			}
+			else newtemp=Math.round(((val-32)*5/9)*100)/100
+
+			document.getElementById("display").innerHTML=`Temperature in Celcius: ${newtemp} *C`
+		}
+
+		function fahren(){
+			const val = document.getElementById("temp").value
+			const unit = document.getElementById("unit").value
+			let newtemp=0
+			if(unit==='f'){
+				 newtemp=val
+			}
+			else newtemp=Math.round(((val*5/9)+32)*100)/100
+
+			document.getElementById("display").innerHTML=`Temperature in Fahrenheit: ${newtemp} *F`
+		}
+	</script> 
+</body>
+</html>

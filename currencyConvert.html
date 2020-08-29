@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Currency Converter</title>
+	<style type="text/css">
+		body{
+			font-family: Helvetica;
+			font-weight: bold;
+		}
+		#cont{
+			margin-top: 30vh;
+			background-color: #CB1332;
+			padding: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div id="cont" align=center>
+		<h2>Currency Converter</h2>
+		<select id="unit">
+			<option value="us">US Dollar</option>
+			<option value="inr">Indian Rupees</option>
+			<option value="aus">Australian Dollar</option>
+			<option value="eur">Euro</option>
+			<option value="bp">British Pound</option>
+		</select>
+		<input type="text" placeholder="Enter Value" id="temp"/>
+		
+		<br><br>
+
+		<label for="btn">Convert To: </label>
+		<button name="btn" onclick="usd()">USD</button>
+		<button name="btn" onclick="euro()">EURO</button>
+		<button name="btn" onclick="aud()">AUD</button>
+		<button onclick="inr()">INR</button>
+		<button name="btn" onclick="brp()">BRP</button>
+		<br>
+
+		<p id="display"></p>
+	</div>
+
+	<script type="text/javascript">
+		function usd(){
+			const val = document.getElementById("temp").value
+			const unit = document.getElementById("unit").value
+			let newtemp=0
+			if(unit==='us'){
+				 newtemp=val
+			}
+			else if(unit==='inr') newtemp=Math.round((val*0.014)*100)/100
+			else if(unit==='eur') newtemp=Math.round((val*1.19)*100)/100
+			else if(unit==='aus') newtemp=Math.round((val*0.736)*100)/100
+			else if(unit==='bp') newtemp=Math.round((val*1.335)*100)/100
+
+			document.getElementById("display").innerHTML=`Currency in USD: ${newtemp} USD`
+		}
+
+		function inr(){
+
+			const val = document.getElementById("temp").value
+			const unit = document.getElementById("unit").value
+			let newtemp=0
+			if(unit==='inr'){
+				 newtemp=val
+			}
+			else if(unit==='us') newtemp=Math.round((val*73.14)*100)/100
+			else if(unit==='eur') newtemp=Math.round((val*87.08)*100)/100
+			else if(unit==='aus') newtemp=Math.round((val*53.88)*100)/100
+			else if(unit==='bp') newtemp=Math.round((val*97.65)*100)/100
+
+			document.getElementById("display").innerHTML=`Currency in INR: ${newtemp} INR`
+		}
+
+		function euro(){
+
+			const val = document.getElementById("temp").value
+			const unit = document.getElementById("unit").value
+			let newtemp=0
+			if(unit==='eur'){
+				 newtemp=val
+			}
+			else if(unit==='us') newtemp=Math.round((val*0.839)*100)/100
+	        else if(unit==='inr') newtemp=Math.round((val*0.011)*100)/100
+			else if(unit==='aus') newtemp=Math.round((val*0.618)*100)/100
+			else if(unit==='bp') newtemp=Math.round((val*1.121)*100)/100
+
+			document.getElementById("display").innerHTML=`Currency in EURO: ${newtemp} EURO`
+		}
+
+		function aud(){
+
+			const val = document.getElementById("temp").value
+			const unit = document.getElementById("unit").value
+			let newtemp=0
+			if(unit==='aus'){
+				 newtemp=val
+			}
+			else if(unit==='us') newtemp=Math.round((val*1.35)*100)/100
+			else if(unit==='eur') newtemp=Math.round((val*1.61)*100)/100
+			else if(unit==='inr') newtemp=Math.round((val*0.018)*100)/100
+			else if(unit==='bp') newtemp=Math.round((val*1.812)*100)/100
+
+			document.getElementById("display").innerHTML=`Currency in AUD: ${newtemp} AUD`
+		}
+
+		function brp(){
+
+			const val = document.getElementById("temp").value
+			const unit = document.getElementById("unit").value
+			let newtemp=0
+			if(unit==='bp'){
+				 newtemp=val
+			}
+			else if(unit==='us') newtemp=Math.round((val*0.748)*100)/100
+			else if(unit==='eur') newtemp=Math.round((val*0.891)*100)/100
+			else if(unit==='aus') newtemp=Math.round((val*0.551)*100)/100
+			else if(unit==='inr') newtemp=Math.round((val*0.0102)*100)/100
+
+			document.getElementById("display").innerHTML=`Currency in BRP: ${newtemp} BRP`
+		}
+	</script> 
+</body>
+</html>

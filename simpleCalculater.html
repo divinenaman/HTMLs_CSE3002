@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Calculator</title>
+	<style type="text/css">
+		body{
+			font-family: Helvetica;
+			font-weight: bold;
+		}
+		#cont{
+			margin-top: 30vh;
+			background-color: lightblue;
+			padding: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div id="cont" align=center>
+		<h2>Calculator</h2>
+		<form action="#">
+			
+			<input name="num1" type="text" placeholder="Enter Number 1" id="num1"/>
+			
+			<input name="num2" type="text" placeholder="Enter Number 2" id="num2"/>
+			
+			<br><br>
+			<table>
+				<tr>
+					<td>
+						<button style="width:50px" type="button" onclick="cal(event)">+</button>
+					</td>
+					<td>
+						<button style="width:50px" type="button" onclick="cal(event)">-</button>
+					</td>
+					<td>
+						<button style="width:50px" type="button" onclick="cal(event)">x</button>
+					</td>	
+				</tr>
+				<tr>
+					<td>
+						<button style="width:50px" type="button" onclick="cal(event)">/</button>
+					</td>
+					<td>
+						<button style="width:50px" type="button" onclick="cal(event)">^</button>
+					</td>
+					<td>
+						<button style="width:50px" type="button" onclick="cal(event)">%</button>
+					</td>	
+				</tr>
+			</table>
+			<br>
+			<br>
+
+		</form>
+			
+			<p id="display"></p>
+	</div>
+
+	<script type="text/javascript">
+		function cal(e){
+			let val1 = parseFloat(document.getElementById("num1").value)
+			let val2 = parseFloat(document.getElementById("num2").value)
+			let operator = e.target.innerHTML
+			let result = 0
+			switch(operator){
+				case '+':
+					result = val1+val2
+					break
+				case '-':
+					result = val1-val2
+					break
+				case 'x':
+					result = val1*val2
+					break
+				case '/':
+					result=val1/val2
+					break
+				case '^':
+					result = Math.pow(val1,val2)
+					break
+				case '%':
+					result = val1%val2
+					break
+			}
+
+			if(isNaN(result)) result=`Invalid Input`
+			document.getElementById("display").innerHTML=`Result: ${result}`
+		}
+
+		
+	</script> 
+</body>
+</html>
