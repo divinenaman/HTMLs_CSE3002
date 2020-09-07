@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Forms</title>
+	<style>
+		body{
+			font-family: Helvetica;
+		}
+		label{
+			font-weight: bold;
+		}
+		.container{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;			
+		}
+		.form{
+			display: inline-block;
+		}
+		#submit{
+			width: 300px;
+			height: 30px;
+			border: none;
+			border-radius: 20px;
+			box-shadow: none;
+			text-decoration: none;
+			margin: none;
+			outline: none;
+		}
+		#submit:hover{
+			background-color: green;
+		}
+		
+		#err{
+			display: none;
+			font-style: italic;
+			background-color: rgba(229, 26, 39, 0.4);
+			opacity: 0.9;
+			font-weight: bold;
+			padding: 10px;
+		}
+		#display{
+			display: none;
+			font-style: italic;
+			background-color: rgba(70, 164, 53, 0.6);
+			opacity: 0.9;
+			font-weight: bold;
+			padding: 10px;
+		}	
+	</style>
+</head>
+<body style="background-color:#3DCCCC;">
+
+
+	<h2 align=center>REGISTRATION</h2>
+
+	<div class="container">
+		<div align=center id="err">
+
+		</div><br>
+
+	<div class="form" >
+		
+		<form action="#" method="POST">
+			
+
+				<label for="uid">User id:</label><br>
+				<input type=text placeholder="user id.." name="user id" id="uid"/><br><br>
+				<br>
+
+				<label for="pass">Password:</label><br>
+				<input type="password" placeholder="password.." name="password" id="pass"/><br><br>
+				<br>
+
+				<label for="name">NAME:</label><br>
+				<input type=text placeholder="Name.." name="name" id="name"/><br><br>
+				<br>
+
+				<label for="address">ADDRESS:</label><br>
+				<textarea name="address" id="address"></textarea><br><br>
+				<br>
+
+				<label for="country">COUNTRY:</label><br>
+				<input type=text placeholder="Country" name="country" id="country"/><br><br>
+				<br>				
+
+				<label for="email">EMAIL:</label><br>
+				<input type=text placeholder="Email" name="email" id="email"/><br><br>
+				<br>
+				
+				
+				<label for="mobile">MOBILE NO:</label><br>
+				<input type="text" name="mobile" placeholder="Mobile No." id="mobile"><br><br>
+				<br>
+
+				<label for="male">GENDER:</label>
+				<input type="radio" name="gender" id="male"/>
+				<label for="male">Male</label>
+				<input type="radio" name="gender" id="female"/>
+				<label for="female">Female</label><br><br>
+				<br>
+				
+				
+				<label for="pincode">PINCODE:</label><br>
+				<input type=text placeholder="Pincode" name="pincode" id="pincode"/><br><br>
+				<br>
+
+				<label for="lang">LANGUAGE:</label>
+				<input type="checkbox" checked name="language" id="english"/>
+				<label for="english">English</label>
+				<input type="checkbox" name="language" id="non-english"/>
+				<label for="non-english">Non English</label><br><br><br>
+				
+				<label for="about">ABOUT:</label><br>
+				<textarea name="about" id="about"></textarea><br><br><br>
+
+				<input type="button" name="submit" id="submit" onclick="validate()" value="submit">
+			
+		</form>
+	</div>
+	<br><br>
+	<div id="display"></div>
+</div><br><br>
+	
+
+<script>
+	function validate () {
+		
+		var x = document.forms[0]
+		var er = document.getElementById("err")
+		var dis= document.getElementById("display")
+		er.style.display = 'none'
+		er.innerHTML=""
+		dis.style.display = 'none'
+		dis.innerHTML=""
+
+		console.log(x)
+		let i=0
+		empty=[]
+		for (input of x){
+			var err=""
+			if(input.id!="about" && input.value===""){
+				empty.push(input.name)
+
+			}
+			
+			else{
+
+				switch(input.id){
+					case "uid":
+						
+						if(!(input.value.length>=5 && input.value.length<=12)){
+							err=`user id must contain 5-12 characters`
+						}
+						break
+
+					case "pass":
+						if(!(input.value.length>=8 && input.value.length<=12)){
+							err=`password must contain 8-12 characters`
+						}
+						break
+
+					case "name":
+						if(!(input.value.match(/^[A-Za-z]+$/))){
+							err=`Name accepts alphabets only`
+						}
+						break
+
+					case "mobile":
+						console.log(input.value)
+						if(!input.value.match(/^[0-9]{10}$/)){
+							err=`Mobile Number invalid`
+						}
+						break
+
+					case "pincode": 
+						if(!input.value.match(/^[0-9]{6}$/)){
+							err=`Invalid Pincode `
+						}
+						break
+
+					case "email":
+						if(!input.value.match(/^[A-Za-z].(\w|[._$])+@[A-Za-z]{3,}\.(com|in|edu|io)$/)){
+							err=`invalid email`
+						}
+
+
+				}
+				if(err!==""){
+
+					let a=document.getElementById("err")
+					//console.log(getComputedStyle(a).display)
+					if(getComputedStyle(a).display=='none'){
+						a.style.display = 'block'
+					}
+					let b=document.createElement("p")
+					b.innerHTML = `${err}`
+					a.appendChild(b)
+				}
+			}
+		
+	}
+				if(empty.length){
+					let a=document.getElementById("err")
+					if(getComputedStyle(a).display=='none'){
+						a.style.display = 'block'
+					}
+					let b=document.createElement("p")
+					b.innerHTML = `Fields Cannot be empty: ${empty.join(' , ')}`
+					a.appendChild(b)	
+				}
+
+			if(document.getElementById("err").innerHTML==""){
+				let a=document.getElementById("display")
+				a.style.display = 'block'
+				let form=document.forms[0]
+				let data={}
+				for (d of form){
+
+					if(d.type!=='button'){
+					if(d.type=='checkbox' || d.type=='radio'){
+						if(d.checked){
+							if(data.hasOwnProperty(d.name)) data[d.name]+=` , ${d.id}`
+							else data[d.name]=d.id 
+						}
+					}
+					else {
+						if(d.value!="") data[d.name]=d.value
+					}
+				}
+				}
+					a.innerHTML=Array.from(Object.keys(data),(v,i)=>`${v}: ${data[v]}`).join("<br><br>")
+
+				}
+				
+			}
+
+
+
+	
+</script>
+</body>
+</html>
